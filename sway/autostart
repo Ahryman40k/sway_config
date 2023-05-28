@@ -1,0 +1,11 @@
+exec rm /tmp/nwg-shell-check-update.lock
+exec gammastep-indicator -c /home/ahryman/.config/gammastep/gammastep.conf
+exec swaync -s /home/ahryman/.config/swaync/preset-3.css
+exec nm-applet --indicator
+exec_always nwg-autotiling -w 3
+exec_always nwg-drawer -r -c 6 -is 64 -fscol 2 -ovl -g Adwaita-dark -i ePapirus-Dark -s preset-3.css -term foot
+exec_always nwg-dock -r -p left -f -a center -i 42 -hd 20 -x -s preset-3.css
+exec_always nwg-panel -c preset-3 -s preset-3.css
+exec_always nwg-shell-check-updates
+exec swayidle timeout 1200 nwg-lock timeout 1205 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' 
+exec nwg-shell-config
